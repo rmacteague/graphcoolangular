@@ -1,0 +1,37 @@
+# project: cj6d2hxtd2k0x0121khax7nzl
+# version: 3
+
+type User implements Node {
+  id: ID! @isUnique
+  firstName: String!
+  lastName: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type File implements Node {
+  id: ID! @isUnique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  contentType: String!
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  url: String! @isUnique
+}
+
+type MobileWhiteList implements Node {
+  platformName: String! @isUnique
+  supportedVersion: [String!]
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+}
+
+type UserChallenges implements Node {
+  id: ID! @isUnique
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  progress: Int!
+}
